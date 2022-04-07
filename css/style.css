@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100&family=Open+Sans:wght@300&display=swap');
+*{
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    color: #edf0f1;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../img/pattern.jpg");
+    overflow-x: hidden;
+}
+/* NAVBAR  */
+
+.navbar{
+    background-color: #000000;
+    position:fixed;
+    inset: 0 0 90% 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10%;
+    z-index: 100;
+}
+
+.nav_toggle_button{
+    position: fixed;
+    background: url("../img/btnMenu.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border: 0px;
+    width: 2rem;
+    aspect-ratio: 1;
+    top: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+@media (max-width: 35em){
+    .navbar {
+        position: fixed;
+        inset: 0 0 0 30%;
+        background-color: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(0.3rem);
+
+        padding: min(30vh, 10rem) 1em;
+        flex-direction: column;
+
+        transform: translateX(100%);
+        transition: transform 350ms ease-out;
+    }
+
+    .nav_links li{
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+}
+
+.navbar[data-visible="true"]{
+    transform: translateX(0%);
+}
+
+.nav_links{
+    list-style: none;
+}
+
+.navbar img{
+    width: 10vh;
+}
+
+.nav_links li, .nav_links a{
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav_links li a{
+    transition: all 0.3s ease 0s;
+    font-size: 24px;
+}
+
+.nav_links li a:hover{
+    color: #0088a9;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    z-index: 1;
+}
+  
+.dropdown-content a {
+    background-color: rgba(0, 0, 0, 1);
+    padding: 10px 6px;
+    text-decoration: none;
+    display: block;
+}
+  
+.dropdown-content a:hover {
+    color: #0088a9;
+}
+  
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.main h1{
+    font-size: 3vw;
+    margin: 20px;
+    margin-top: 3em;
+    text-align: center;
+}
+
+.main-logo{
+    text-align: center;
+    padding: 3em 3em;
+}
+
+.main-logo img {
+    width: max(30vw, 25em);
+}
+
+@keyframes spin {
+    from{
+        transform: rotateY(0deg);
+        -moz-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+    }
+    to{
+        transform: rotateY(360deg);
+        -moz-transform: rotateY(360deg);
+        -ms-transform: rotateY(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    from{-webkit-transform: rotateY(0deg);}
+    to{-webkit-transform: rotateY(360deg);}
+}
+
+.image-spin{
+    animation-name: spin;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+
+    -webkit-animation-name: spin;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 5s;
+}
+
+.main p {
+    margin: 2% 5%;
+}
+
+.infoimg{
+    text-align: center;
+}
+
+.infoimg img{
+    width: 30%;
+    border: solid 5px rgb(66, 38, 22);
+    margin: 0px 20px;
+}
+
+#muzika {
+    padding: 7px 20px;
+    background-color: rgba(0,136,169,1);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer; 
+    transition: all 0.3s ease 0s;
+}
+
+.soundButton{
+    max-width: 40px;
+    height: auto;
+    display: inline-block;
+}
+
+.videoDiv{
+    text-align: center;
+    margin: 20px;
+}
+
+.videoDiv video {
+    width: 50%;
+    height: 25%;
+}
+
+#muzika:hover{
+    background-color: rgba(0,136,169,0.8);
+}
+
+p {
+    font-size: 20px;
+    margin: 10px;
+    margin-bottom: 20px;
+}
+/* FORMA */
+.form{
+    text-align: left;
+    margin: 1em;
+    padding: 1em;
+}
+
+label{
+    font-size: 20px;
+}
+
+.form_btn {
+    background-color: #0088a9;
+    font-size: 20px;
+    padding: 0.5em;
+    margin-top: 1em;
+}
+
+
+h2{
+    padding: 10px;
+    margin-top: 3em;
+    margin-bottom: 3em;
+    text-align: center;
+    font-size: 200%;
+}
+/* SUSHI NA STRANICI RECEPTI */
+.flex_container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.flex_item{
+    border: solid 3px black;
+    width: 25%;
+    margin: 20px;
+    padding: 20px;
+    background: hsl(0 0% 100% / 0.1);
+    backdrop-filter: blur(0.2rem);
+}
+
+.flex_item h3 {
+    text-align: center;
+    text-shadow: 2px 2px 8px black;
+    font-size: 2vw;
+}
+
+.flex_item img {
+    width: 100%;
+}
+
+h3{
+    font-size: 30px;
+    margin: 20px 10px;
+}
+
+.greska {
+    color: red;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#Name , #Email, #Phone, #Message{
+    color: black;
+}
